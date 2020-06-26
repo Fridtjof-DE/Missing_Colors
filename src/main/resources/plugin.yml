@@ -1,7 +1,6 @@
 name: Missing_Colors
 version: ${project.version}
 main: tk.fridtjof.missing_colors.Missing_Colors
-api-version: 1.8
 authors: [Fridtjof_DE]
 description: Makes the game more colorful!
 website: https://www.fridtjof.tk/
