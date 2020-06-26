@@ -1,0 +1,22 @@
+name: Missing_Colors
+version: ${project.version}
+main: tk.fridtjof.missing_colors.Missing_Colors
+api-version: 1.8
+authors: [Fridtjof_DE]
+description: Makes the game more colorful!
+website: https://www.fridtjof.tk/
+permissions:
+  missing_colors.signs.color_codes:
+    description: Grants permission to use color codes on signs!
+  missing_colors.signs.formatting_codes:
+    description: Grants permission to use formatting codes on signs!
+  missing_colors.chat.color_codes:
+    description: Grants permission to use color codes in chat!
+  missing_colors.chat.formatting_codes:
+    description: Grants permission to use formatting codes in chat!
+  missing_colors.anvil.color_codes:
+    description: Grants permission to use color codes in anvils!
+  missing_colors.anvil.formatting_codes:
+    description: Grants permission to use formatting codes in anvils!
+  missing_colors.update:
+    description: Users with this permission will get notified if an update is available.
