@@ -4,6 +4,8 @@ main: tk.fridtjof.missing_colors.Missing_Colors
 authors: [Fridtjof_DE]
 description: Makes the game more colorful!
 website: https://www.fridtjof.tk/
+depend: [PuddingAPI]
+
 permissions:
   missing_colors.signs.color_codes:
     description: Grants permission to use color codes on signs!

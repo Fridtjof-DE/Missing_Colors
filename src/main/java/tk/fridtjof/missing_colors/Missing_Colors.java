@@ -1,8 +1,8 @@
 package tk.fridtjof.missing_colors;
 
-import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
-import tk.fridtjof.missing_colors.utils.UpdateChecker;
+import tk.fridtjof.puddingapi.bukkit.utils.Metrics;
+import tk.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
 
 public final class Missing_Colors extends JavaPlugin {
 
@@ -18,13 +18,10 @@ public final class Missing_Colors extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        UpdateChecker updateChecker = new UpdateChecker(this);
-        updateChecker.checkForUpdate();
-
         getServer().getPluginManager().registerEvents(new EventManager(), this);
 
-        int pluginId = 7545;
-        new Metrics(this, pluginId);
+        new UpdateChecker(this, 55489, "missing_colors.update");
+        new Metrics(this, 7545);
     }
 
     @Override
