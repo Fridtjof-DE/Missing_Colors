@@ -1,8 +1,8 @@
 package me.fridtjof.missing_colors;
 
+import me.fridtjof.puddingapi.bukkit.utils.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
-import tk.fridtjof.puddingapi.bukkit.utils.Metrics;
-import tk.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
+import me.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
 
 public final class Missing_Colors extends JavaPlugin {
 
