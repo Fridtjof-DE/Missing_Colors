@@ -1,4 +1,4 @@
-package tk.fridtjof.missing_colors;
+package me.fridtjof.missing_colors;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.fridtjof.puddingapi.bukkit.utils.Metrics;

@@ -1,4 +1,4 @@
-package tk.fridtjof.missing_colors.utils;
+package me.fridtjof.missing_colors.utils;
 
 public class ColorCodes {
 

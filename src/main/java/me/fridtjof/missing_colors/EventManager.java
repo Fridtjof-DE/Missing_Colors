@@ -1,5 +1,7 @@
-package tk.fridtjof.missing_colors;
+package me.fridtjof.missing_colors;
 
+import me.fridtjof.missing_colors.utils.ColorCodes;
+import me.fridtjof.missing_colors.utils.FormattingCodes;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,8 +15,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import tk.fridtjof.missing_colors.utils.ColorCodes;
-import tk.fridtjof.missing_colors.utils.FormattingCodes;
 
 public class EventManager implements Listener {
 
