@@ -1,9 +1,9 @@
 name: Missing_Colors
 version: ${project.version}
-main: tk.fridtjof.missing_colors.Missing_Colors
+main: me.fridtjof.missing_colors.Missing_Colors
 authors: [Fridtjof_DE]
 description: Makes the game more colorful!
-website: https://www.fridtjof.tk/
+website: https://www.fridtjof.me/
 depend: [PuddingAPI]
 
 permissions:
