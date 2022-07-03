@@ -6,19 +6,23 @@
 
     <groupId>me.fridtjof</groupId>
     <artifactId>Missing_Colors</artifactId>
-    <version>2.1.0</version>
+    <version>3.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Missing_Colors</name>
 
     <description>Makes the game more colorful!</description>
     <properties>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yy-MMdd-HHmm</maven.build.timestamp.format>
+
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <url>https://www.fridtjof.me/</url>
 
     <build>
+        <finalName>${project.artifactId}-${project.version}-${timestamp}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -77,7 +81,7 @@
             <artifactId>puddingapi</artifactId>
             <version>2.0.0-Snapshot</version>
             <scope>system</scope>
-            <systemPath>C:/Users/Fridtjof/Documents/GitHub/PuddingAPI/builds/PuddingAPI-2.0.0-SNAPSHOT.jar</systemPath>
+            <systemPath>/home/fridtjof/Dokumente/GitHub/PuddingAPI/builds/PuddingAPI-2.0.0-SNAPSHOT-22-0701-1041.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
