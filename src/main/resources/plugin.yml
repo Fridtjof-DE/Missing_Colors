@@ -1,5 +1,5 @@
 name: Missing_Colors
-version: ${project.version}
+version: ${project.version}-${timestamp}
 main: me.fridtjof.missing_colors.Missing_Colors
 authors: [Fridtjof_DE]
 description: Makes the game more colorful!
