@@ -1,8 +1,10 @@
 package me.fridtjof.missing_colors;
 
+import me.fridtjof.puddingapi.bukkit.utils.Logger;
 import me.fridtjof.puddingapi.bukkit.utils.Metrics;
+import me.fridtjof.puddingapi.bukkit.utils.ModrinthUpdateChecker;
+import me.fridtjof.puddingapi.bukkit.utils.PuddingAPIVersionChecker;
 import org.bukkit.plugin.java.JavaPlugin;
-import me.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
 
 public final class Missing_Colors extends JavaPlugin {
 
@@ -16,12 +18,19 @@ public final class Missing_Colors extends JavaPlugin {
         return instance;
     }
 
+    Logger logger = new Logger(this);
+
     @Override
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(new EventManager(), this);
 
-        new UpdateChecker(this, 55489, "missing_colors.update");
+        new PuddingAPIVersionChecker(this, logger, 2503151209L);
+        new ModrinthUpdateChecker(this, "hiFvJn4K", "spigot");
+        //legacy update checker
+        //new UpdateChecker(this, 55489, "missing_colors.update");
+
         new Metrics(this, 7545);
+
+        getServer().getPluginManager().registerEvents(new EventManager(), this);
     }
 
     @Override

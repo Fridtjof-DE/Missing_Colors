@@ -1,10 +1,12 @@
 name: Missing_Colors
-version: ${project.version}-${timestamp}
+version: ${project.version}
 main: me.fridtjof.missing_colors.Missing_Colors
 authors: [Fridtjof_DE]
 description: Makes the game more colorful!
 website: https://www.fridtjof.me/
 depend: [PuddingAPI]
+folia-supported: true
+api-version: 1.21
 
 permissions:
   missing_colors.signs.color_codes:
