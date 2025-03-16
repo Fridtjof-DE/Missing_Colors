@@ -6,7 +6,7 @@ description: Makes the game more colorful!
 website: https://www.fridtjof.me/
 depend: [PuddingAPI]
 folia-supported: true
-api-version: 1.21
+api-version: 1.20
 
 permissions:
   missing_colors.signs.color_codes:
