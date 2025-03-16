@@ -1,5 +1,5 @@
-[![API Badge](https://img.shields.io/badge/MC%20version-Spigot%20v1.21.x-blue?style=flat-square)](https://www.spigotmc.org/)
-[![Latest Release Badge](https://img.shields.io/spiget/version/55489?label=latest%20release&style=flat-square)](https://www.spigotmc.org/resources/missing_colors.55489/)
+[![API Badge](https://img.shields.io/badge/MC%20version-Bukkit%201.20.x%20--%201.21.x-blue?style=flat-square)](https://www.spigotmc.org/)
+[![Latest Release Badge](https://img.shields.io/modrinth/v/hiFvJn4K?style=flat-square&label=latest%20release)](https://www.spigotmc.org/resources/missing_colors.55489/)
 [![Maintenance Badge](https://img.shields.io/maintenance/yes/2025?style=flat-square)]()
 [![Issue Badge](https://img.shields.io/github/issues/Fridtjof-DE/Missing_Colors?style=flat-square)](https://github.com/Fridtjof-DE/Missing_Colors/issues)
 [![Discord Online Badge](https://img.shields.io/discord/961799414647750717?label=Discord&style=flat-square)](https://discord.gg/fT6VJurHCT)
