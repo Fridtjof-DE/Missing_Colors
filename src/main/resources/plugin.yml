@@ -9,17 +9,23 @@ folia-supported: true
 api-version: 1.20
 
 permissions:
+  missing_colors.signs.hex_codes:
+    description: Grants permission to use hex codes on signs!
   missing_colors.signs.color_codes:
     description: Grants permission to use color codes on signs!
   missing_colors.signs.formatting_codes:
     description: Grants permission to use formatting codes on signs!
+  missing_colors.chat.hex_codes:
+    description: Grants permission to use hex codes in chat!
   missing_colors.chat.color_codes:
     description: Grants permission to use color codes in chat!
   missing_colors.chat.formatting_codes:
     description: Grants permission to use formatting codes in chat!
+  missing_colors.anvil.hex_codes:
+    description: Grants permission to use hex codes in anvils GUIs!
   missing_colors.anvil.color_codes:
-    description: Grants permission to use color codes in anvils!
+    description: Grants permission to use color codes in anvils GUIs!
   missing_colors.anvil.formatting_codes:
-    description: Grants permission to use formatting codes in anvils!
+    description: Grants permission to use formatting codes in anvils GUIs!
   missing_colors.update:
     description: Users with this permission will get notified if an update is available.

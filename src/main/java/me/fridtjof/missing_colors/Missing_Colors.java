@@ -23,7 +23,7 @@ public final class Missing_Colors extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        new PuddingAPIVersionChecker(this, logger, 2503151209L);
+        new PuddingAPIVersionChecker(this, logger, 2610271428L);
         new ModrinthUpdateChecker(this, "hiFvJn4K", "spigot");
         //legacy update checker
         //new UpdateChecker(this, 55489, "missing_colors.update");

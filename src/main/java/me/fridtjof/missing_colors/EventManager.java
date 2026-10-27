@@ -1,7 +1,6 @@
 package me.fridtjof.missing_colors;
 
-import me.fridtjof.missing_colors.utils.ColorCodes;
-import me.fridtjof.missing_colors.utils.FormattingCodes;
+import me.fridtjof.puddingapi.bukkit.utils.ColorTranslationUtils;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,42 +17,56 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class EventManager implements Listener {
 
-    ColorCodes c = new ColorCodes();
-    FormattingCodes f = new FormattingCodes();
+    ColorTranslationUtils colorUtils = new ColorTranslationUtils('&', "&#", "");
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onChat(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
+        String message = event.getMessage();
+
+        if (colorUtils.isMessageEmptyOrWhitespaceOnly(message)) {
+            event.setCancelled(true);
+            return;
+        }
+
+        if(player.hasPermission("missing_colors.chat.hex_codes") || player.isOp()) {
+            message = colorUtils.translateHexCodes(message);
+        }
 
         if(player.hasPermission("missing_colors.chat.color_codes") || player.isOp()) {
-            event.setMessage(c.Format(event.getMessage()));
+            message = colorUtils.translateLegacyColorCodes(message);
         }
 
         if(player.hasPermission("missing_colors.chat.formatting_codes") || player.isOp()) {
-            event.setMessage(f.Format(event.getMessage()));
+            message = colorUtils.translateLegacyFormattingCodes(message);
         }
+
+        event.setMessage(message);
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onWrite(SignChangeEvent event) {
-        if (event.getPlayer().hasPermission("missing_colors.signs.color_codes") || event.getPlayer().isOp()) {
 
-            event.setLine(0, c.Format(event.getLine(0)));
-            event.setLine(1, c.Format(event.getLine(1)));
-            event.setLine(2, c.Format(event.getLine(2)));
-            event.setLine(3, c.Format(event.getLine(3)));
+        if (event.getPlayer().hasPermission("missing_colors.signs.hex_codes") || event.getPlayer().isOp()) {
+            for (int i = 0; i < 4; i++) {
+                event.setLine(i, colorUtils.translateHexCodes(event.getLine(i)));
+            }
+        }
+
+        if (event.getPlayer().hasPermission("missing_colors.signs.color_codes") || event.getPlayer().isOp()) {
+            for (int i = 0; i < 4; i++) {
+                event.setLine(i, colorUtils.translateLegacyColorCodes(event.getLine(i)));
+            }
         }
 
         if (event.getPlayer().hasPermission("missing_colors.signs.formatting_codes") || event.getPlayer().isOp()) {
-
-            event.setLine(0, f.Format(event.getLine(0)));
-            event.setLine(1, f.Format(event.getLine(1)));
-            event.setLine(2, f.Format(event.getLine(2)));
-            event.setLine(3, f.Format(event.getLine(3)));
+            for (int i = 0; i < 4; i++) {
+                event.setLine(i, colorUtils.translateLegacyFormattingCodes(event.getLine(i)));
+            }
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onInvClick(InventoryClickEvent event) {
 
         if(!event.isCancelled()) {
@@ -72,17 +85,28 @@ public class EventManager implements Listener {
 
                             if(itemStack != null) {
 
+                                ItemMeta meta = itemStack.getItemMeta();
+                                String displayName = meta.getDisplayName();
+
+                                if (colorUtils.isMessageEmptyOrWhitespaceOnly(displayName)) {
+                                    event.setCancelled(true);
+                                    return;
+                                }
+
+                                if(player.hasPermission("missing_colors.anvil.hex_codes")) {
+                                    displayName = colorUtils.translateHexCodes(displayName);
+                                }
+
                                 if(player.hasPermission("missing_colors.anvil.color_codes")) {
-                                    ItemMeta meta = itemStack.getItemMeta();
-                                    meta.setDisplayName(c.Format(meta.getDisplayName()));
-                                    itemStack.setItemMeta(meta);
+                                    displayName = colorUtils.translateLegacyColorCodes(displayName);
                                 }
 
                                 if(player.hasPermission("missing_colors.anvil.formatting_codes")) {
-                                    ItemMeta meta = itemStack.getItemMeta();
-                                    meta.setDisplayName(f.Format(meta.getDisplayName()));
-                                    itemStack.setItemMeta(meta);
+                                    displayName = colorUtils.translateLegacyFormattingCodes(displayName);
                                 }
+
+                                meta.setDisplayName(displayName);
+                                itemStack.setItemMeta(meta);
                             }
                         }
                     }
