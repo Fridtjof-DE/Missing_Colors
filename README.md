@@ -26,7 +26,7 @@ This plugin offers the possibility to use formatting codes to write colorfully o
 ## How it works
 While writing you just use `&` instead of `§` to write down Minecraft's legacy [formatting codes](https://minecraft.fandom.com/wiki/Formatting_codes).
 
-Additionally, update 3.1.0 makes it possible to use HEX codes. You can do this simply by typing an "&" followed by the HEX code. For example: "&#d79195Hello"
+Additionally, update 3.1.0 makes it possible to use HEX codes. You can do this simply by typing an `&` followed by the HEX code. For example: `&#d79195Hello`
 
 ## Permissions
 - To use hex codes on signs: `missing_colors.signs.hex_codes`
